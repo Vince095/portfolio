@@ -1,0 +1,117 @@
+
+
+.loader{
+    position:fixed;
+    width:100%;
+    height:100vh;
+    background-color: rgb(2, 3, 8);
+    z-index:600;
+}
+#cycles{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%, -50%);
+    animation:load 2s ease infinite;
+}
+#cycles ellipse{
+    animation:load 2s ease infinite;
+}
+@keyframes load {
+    0% {
+        transform:rotate(0deg);
+       
+    }
+    100% {
+        transform:rotate(360deg);
+    }
+}
+#logo{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%);
+    animation:fill 2.5s ease-in-out forwards 4.8s infinite;
+    
+  
+}
+.foot{
+    color:azure;
+    position:absolute;
+    top:90%;
+    left:50%;
+    transform:translate(-50%);
+    animation: fill 2s ease  forwards 4.8s;
+}
+.foot path:nth-child(1){
+    stroke-dasharray: 80px;
+    stroke-dashoffset: 40px;
+}
+.foot path:nth-child(6){
+    stroke-dasharray: 40px;
+    stroke-dashoffset: 20px;
+}
+.foot path:nth-child(9){
+    stroke-dasharray: 80px;
+    stroke-dashoffset: 40px;
+}
+.foot path:nth-child(15){
+    stroke-dasharray: 40px;
+    stroke-dashoffset: 20px;
+}
+
+#logo path:nth-child(1){
+  stroke-dasharray: 883.8030395507812px;
+  stroke-dashoffset: 883.8030395507812px;
+  animation: anime 2s ease  forwards .6s;
+  animation: fill 4.5s ease  forwards .2s;
+  
+}
+
+#logo path:nth-child(2){
+    stroke-dasharray: 450.56451416015625px;
+    stroke-dashoffset: 450.56451416015625px;
+    animation: anime 2s ease  forwards 1.2s ;
+}
+
+#logo path:nth-child(3){
+    stroke-dasharray: 1265.8128662109375px;
+    stroke-dashoffset: 1265.8128662109375px;
+    animation: anime 2s ease  forwards 1.8s ;
+}
+
+#logo path:nth-child(4){
+    stroke-dasharray: 835.0543212890625px;
+    stroke-dashoffset: 835.0543212890625px;
+    animation: anime 2s ease  forwards 2.4s ;
+}
+#logo path:nth-child(5){
+    stroke-dasharray: 920.24853515625px;
+    stroke-dashoffset: 920.24853515625px;
+    animation: anime 2s ease  forwards 3s;
+}
+#logo path:nth-child(6){
+    stroke-dasharray: 1265.814208984375px;
+    stroke-dashoffset: 1265.814208984375px;
+    animation: anime 2s ease  forwards 3.6s ;
+}
+#logo path:nth-child(7){
+    stroke-dasharray: 683.1524658203125px;
+    stroke-dashoffset: 683.1524658203125px;
+    animation: anime 2s ease  forwards 4.2s;
+}
+@keyframes anime {
+    to{
+        stroke-dashoffset: 0;
+    }
+}
+@keyframes fill {
+    from{
+        fill:transparent;
+        transition:all 2s ease;
+    }
+    to{
+        fill:rgba(240, 255, 255, 0.767);
+        transition:all 2s ease;
+    }
+}

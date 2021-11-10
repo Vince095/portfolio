@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>My Portfolio</title>
+         <!-- Meta Tags 
+              begins 
+      
+              -->
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset= UTF-8>
+    <link rel="shortcut icon" type="image" href="meLogo.svg"/>
+    
+   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+   <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="loader.css">
+   <script src="main.js"></script>
+   <!--script src="particles.js"></script-->
+   <script src = "https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.min.js"></script>
+   <script src="attractors.js"></script>
+
+    </head>
+    <body>
+      <!--canvas id="canvas"></-canvas-->
+     <div class="loader">
+       <!-- svg loading 
+      begins 
+      
+      --> <svg id="cycles" width="20%" height="157" viewBox="0 0 813 457" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="16.5" cy="99.5" rx="16.5" ry="17.5" fill="#3430F7"/>
+            <ellipse cx="274" cy="448.5" rx="6" ry="8.5" fill="white" fill-opacity="0.81"/>
+            <ellipse cx="802" cy="382" rx="11" ry="13" fill="#FA963A" fill-opacity="0.81"/>
+            <ellipse cx="602" cy="552" rx="11" ry="13" fill="#FA963A" fill-opacity="0.81"/>
+            <circle cx="443" cy="12" r="12" fill="#3430F7"/>
+          </svg>
+
+
+         <svg width="60%" height="210" viewBox="0 0 1155 210" fill="none" xmlns="http://www.w3.org/2000/svg" id="logo">
+              <path d="M174.344 4.34375L99.6719 206H73.6562L0.53125 4.34375H26.8281L82.6562 164.234C84.4375 169.391 85.7969 175.344 86.7344 182.094H87.2969C88.0469 176.469 89.5938 170.422 91.9375 163.953L148.891 4.34375H174.344Z" stroke="white"/>
+              <path d="M226.938 206H203.312V4.34375H226.938V206Z"stroke="white" />
+              <path d="M442.656 206H413.688L309.906 45.2656C307.281 41.2344 305.125 37.0156 303.438 32.6094H302.594C303.344 36.9219 303.719 46.1562 303.719 60.3125V206H280.094V4.34375H310.75L411.719 162.547C415.938 169.109 418.656 173.609 419.875 176.047H420.438C419.5 170.234 419.031 160.344 419.031 146.375V4.34375H442.656V206Z" stroke="white"/>
+              <path d="M632.781 197.562C617.875 205.438 599.312 209.375 577.094 209.375C548.406 209.375 525.438 200.141 508.188 181.672C490.938 163.203 482.312 138.969 482.312 108.969C482.312 76.7188 492.016 50.6562 511.422 30.7812C530.828 10.9062 555.438 0.96875 585.25 0.96875C604.375 0.96875 620.219 3.73438 632.781 9.26562V34.4375C618.344 26.375 602.406 22.3438 584.969 22.3438C561.812 22.3438 543.016 30.0781 528.578 45.5469C514.234 61.0156 507.062 81.6875 507.062 107.562C507.062 132.125 513.766 151.719 527.172 166.344C540.672 180.875 558.344 188.141 580.188 188.141C600.438 188.141 617.969 183.641 632.781 174.641V197.562Z" stroke="white"/>
+              <path d="M780.719 206H673.844V4.34375H776.219V25.7188H697.469V92.7969H770.312V114.031H697.469V184.625H780.719V206Z" stroke="white" />
+              <path d="M982.094 206H953.125L849.344 45.2656C846.719 41.2344 844.562 37.0156 842.875 32.6094H842.031C842.781 36.9219 843.156 46.1562 843.156 60.3125V206H819.531V4.34375H850.188L951.156 162.547C955.375 169.109 958.094 173.609 959.312 176.047H959.875C958.938 170.234 958.469 160.344 958.469 146.375V4.34375H982.094V206Z" stroke="white" />
+              <path d="M1154.22 25.7188H1096V206H1072.38V25.7188H1014.3V4.34375H1154.22V25.7188Z" stroke="white" />
+        </svg>
+              
+
+        <svg width="20%" height="71" viewBox="0 0 936 71" fill="none" xmlns="http://www.w3.org/2000/svg" class="foot">
+          <path d="M0.671875 66.2812V57C1.73438 57.9375 3 58.7812 4.46875 59.5312C5.96875 60.2812 7.53125 60.9219 9.15625 61.4531C10.8125 61.9531 12.4688 62.3438 14.125 62.625C15.7812 62.9062 17.3125 63.0469 18.7188 63.0469C23.5625 63.0469 27.1719 62.1562 29.5469 60.375C31.9531 58.5625 33.1562 55.9688 33.1562 52.5938C33.1562 50.7812 32.75 49.2031 31.9375 47.8594C31.1562 46.5156 30.0625 45.2969 28.6562 44.2031C27.25 43.0781 25.5781 42.0156 23.6406 41.0156C21.7344 39.9844 19.6719 38.9062 17.4531 37.7812C15.1094 36.5938 12.9219 35.3906 10.8906 34.1719C8.85938 32.9531 7.09375 31.6094 5.59375 30.1406C4.09375 28.6719 2.90625 27.0156 2.03125 25.1719C1.1875 23.2969 0.765625 21.1094 0.765625 18.6094C0.765625 15.5469 1.4375 12.8906 2.78125 10.6406C4.125 8.35938 5.89062 6.48438 8.07812 5.01562C10.2656 3.54688 12.75 2.45312 15.5312 1.73438C18.3438 1.01562 21.2031 0.65625 24.1094 0.65625C30.7344 0.65625 35.5625 1.45312 38.5938 3.04688V11.9062C34.625 9.15625 29.5312 7.78125 23.3125 7.78125C21.5938 7.78125 19.875 7.96875 18.1562 8.34375C16.4375 8.6875 14.9062 9.26562 13.5625 10.0781C12.2188 10.8906 11.125 11.9375 10.2812 13.2188C9.4375 14.5 9.01562 16.0625 9.01562 17.9062C9.01562 19.625 9.32812 21.1094 9.95312 22.3594C10.6094 23.6094 11.5625 24.75 12.8125 25.7812C14.0625 26.8125 15.5781 27.8125 17.3594 28.7812C19.1719 29.75 21.25 30.8125 23.5938 31.9688C26 33.1562 28.2812 34.4062 30.4375 35.7188C32.5938 37.0312 34.4844 38.4844 36.1094 40.0781C37.7344 41.6719 39.0156 43.4375 39.9531 45.375C40.9219 47.3125 41.4062 49.5312 41.4062 52.0312C41.4062 55.3438 40.75 58.1562 39.4375 60.4688C38.1562 62.75 36.4062 64.6094 34.1875 66.0469C32 67.4844 29.4688 68.5156 26.5938 69.1406C23.7188 69.7969 20.6875 70.125 17.5 70.125C16.4375 70.125 15.125 70.0312 13.5625 69.8438C12 69.6875 10.4062 69.4375 8.78125 69.0938C7.15625 68.7812 5.60938 68.3906 4.14062 67.9219C2.70312 67.4219 1.54688 66.875 0.671875 66.2812Z" stroke="white"/>
+          <path d="M81.9062 70.125C72.375 70.125 64.7344 66.9844 58.9844 60.7031C53.2656 54.4219 50.4062 46.25 50.4062 36.1875C50.4062 25.375 53.3281 16.75 59.1719 10.3125C65.0156 3.875 72.9688 0.65625 83.0312 0.65625C92.3125 0.65625 99.7812 3.78125 105.438 10.0312C111.125 16.2812 113.969 24.4531 113.969 34.5469C113.969 45.5156 111.062 54.1875 105.25 60.5625C99.4375 66.9375 91.6562 70.125 81.9062 70.125ZM82.4688 7.78125C75.4062 7.78125 69.6719 10.3281 65.2656 15.4219C60.8594 20.5156 58.6562 27.2031 58.6562 35.4844C58.6562 43.7656 60.7969 50.4375 65.0781 55.5C69.3906 60.5312 75 63.0469 81.9062 63.0469C89.2812 63.0469 95.0938 60.6406 99.3438 55.8281C103.594 51.0156 105.719 44.2812 105.719 35.625C105.719 26.75 103.656 19.8906 99.5312 15.0469C95.4062 10.2031 89.7188 7.78125 82.4688 7.78125Z" stroke="white"/>
+          <path d="M161.312 8.90625H135.062V32.1562H159.344V39.2344H135.062V69H127.188V1.78125H161.312V8.90625Z" stroke="white"/>
+          <path d="M213.812 8.90625H194.406V69H186.531V8.90625H167.172V1.78125H213.812V8.90625Z" stroke="white"/>
+          <path d="M306.156 1.78125L287.172 69H277.938L264.109 19.875C263.516 17.7812 263.156 15.5 263.031 13.0312H262.844C262.656 15.3438 262.25 17.5938 261.625 19.7812L247.703 69H238.562L218.875 1.78125H227.547L241.844 53.3438C242.438 55.5 242.812 57.75 242.969 60.0938H243.203C243.359 58.4375 243.844 56.1875 244.656 53.3438L259.516 1.78125H267.062L281.312 53.7188C281.812 55.5 282.188 57.5938 282.438 60H282.625C282.75 58.375 283.172 56.2188 283.891 53.5312L297.625 1.78125H306.156Z" stroke="white"/>
+          <path d="M364.469 69H355.75L348.625 50.1562H320.125L313.422 69H304.656L330.438 1.78125H338.594L364.469 69ZM346.047 43.0781L335.5 14.4375C335.156 13.5 334.812 12 334.469 9.9375H334.281C333.969 11.8438 333.609 13.3438 333.203 14.4375L322.75 43.0781H346.047Z" stroke="white"/>
+          <path d="M422.594 69H413.219L401.969 50.1562C400.938 48.4062 399.938 46.9219 398.969 45.7031C398 44.4531 397 43.4375 395.969 42.6562C394.969 41.875 393.875 41.3125 392.688 40.9688C391.531 40.5938 390.219 40.4062 388.75 40.4062H382.281V69H374.406V1.78125H394.469C397.406 1.78125 400.109 2.15625 402.578 2.90625C405.078 3.625 407.234 4.73438 409.047 6.23438C410.891 7.73438 412.328 9.60938 413.359 11.8594C414.391 14.0781 414.906 16.6875 414.906 19.6875C414.906 22.0312 414.547 24.1875 413.828 26.1562C413.141 28.0938 412.141 29.8281 410.828 31.3594C409.547 32.8906 407.984 34.2031 406.141 35.2969C404.328 36.3594 402.281 37.1875 400 37.7812V37.9688C401.125 38.4688 402.094 39.0469 402.906 39.7031C403.75 40.3281 404.547 41.0781 405.297 41.9531C406.047 42.8281 406.781 43.8281 407.5 44.9531C408.25 46.0469 409.078 47.3281 409.984 48.7969L422.594 69ZM382.281 8.90625V33.2812H392.969C394.938 33.2812 396.75 32.9844 398.406 32.3906C400.094 31.7969 401.547 30.9531 402.766 29.8594C403.984 28.7344 404.938 27.375 405.625 25.7812C406.312 24.1562 406.656 22.3438 406.656 20.3438C406.656 16.75 405.484 13.9531 403.141 11.9531C400.828 9.92188 397.469 8.90625 393.062 8.90625H382.281Z" stroke="white"/>
+          <path d="M467.5 69H431.875V1.78125H466V8.90625H439.75V31.2656H464.031V38.3438H439.75V61.875H467.5V69Z" stroke="white"/>
+          <path d="M542.406 69H506.781V1.78125H540.906V8.90625H514.656V31.2656H538.938V38.3438H514.656V61.875H542.406V69Z" stroke="white"/>
+          <path d="M609.531 69H599.875L565.281 15.4219C564.406 14.0781 563.688 12.6719 563.125 11.2031H562.844C563.094 12.6406 563.219 15.7188 563.219 20.4375V69H555.344V1.78125H565.562L599.219 54.5156C600.625 56.7031 601.531 58.2031 601.938 59.0156H602.125C601.812 57.0781 601.656 53.7812 601.656 49.125V1.78125H609.531V69Z" stroke="white"/>
+          <path d="M677.406 64.4062C670.656 68.2188 663.156 70.125 654.906 70.125C645.312 70.125 637.547 67.0312 631.609 60.8438C625.703 54.6562 622.75 46.4688 622.75 36.2812C622.75 25.875 626.031 17.3438 632.594 10.6875C639.188 4 647.531 0.65625 657.625 0.65625C664.938 0.65625 671.078 1.84375 676.047 4.21875V12.9375C670.609 9.5 664.172 7.78125 656.734 7.78125C649.203 7.78125 643.031 10.375 638.219 15.5625C633.406 20.75 631 27.4688 631 35.7188C631 44.2188 633.234 50.9062 637.703 55.7812C642.172 60.625 648.234 63.0469 655.891 63.0469C661.141 63.0469 665.688 62 669.531 59.9062V41.0625H654.812V33.9375H677.406V64.4062Z" stroke="white"/>
+          <path d="M700.938 69H693.062V1.78125H700.938V69Z" stroke="white"/>
+          <path d="M772.844 69H763.188L728.594 15.4219C727.719 14.0781 727 12.6719 726.438 11.2031H726.156C726.406 12.6406 726.531 15.7188 726.531 20.4375V69H718.656V1.78125H728.875L762.531 54.5156C763.938 56.7031 764.844 58.2031 765.25 59.0156H765.438C765.125 57.0781 764.969 53.7812 764.969 49.125V1.78125H772.844V69Z" stroke="white"/>
+          <path d="M826.094 69H790.469V1.78125H824.594V8.90625H798.344V31.2656H822.625V38.3438H798.344V61.875H826.094V69Z" stroke="white"/>
+          <path d="M874.656 69H839.031V1.78125H873.156V8.90625H846.906V31.2656H871.188V38.3438H846.906V61.875H874.656V69Z" stroke="white"/>
+          <path d="M935.781 69H926.406L915.156 50.1562C914.125 48.4062 913.125 46.9219 912.156 45.7031C911.188 44.4531 910.188 43.4375 909.156 42.6562C908.156 41.875 907.062 41.3125 905.875 40.9688C904.719 40.5938 903.406 40.4062 901.938 40.4062H895.469V69H887.594V1.78125H907.656C910.594 1.78125 913.297 2.15625 915.766 2.90625C918.266 3.625 920.422 4.73438 922.234 6.23438C924.078 7.73438 925.516 9.60938 926.547 11.8594C927.578 14.0781 928.094 16.6875 928.094 19.6875C928.094 22.0312 927.734 24.1875 927.016 26.1562C926.328 28.0938 925.328 29.8281 924.016 31.3594C922.734 32.8906 921.172 34.2031 919.328 35.2969C917.516 36.3594 915.469 37.1875 913.188 37.7812V37.9688C914.312 38.4688 915.281 39.0469 916.094 39.7031C916.938 40.3281 917.734 41.0781 918.484 41.9531C919.234 42.8281 919.969 43.8281 920.688 44.9531C921.438 46.0469 922.266 47.3281 923.172 48.7969L935.781 69ZM895.469 8.90625V33.2812H906.156C908.125 33.2812 909.938 32.9844 911.594 32.3906C913.281 31.7969 914.734 30.9531 915.953 29.8594C917.172 28.7344 918.125 27.375 918.812 25.7812C919.5 24.1562 919.844 22.3438 919.844 20.3438C919.844 16.75 918.672 13.9531 916.328 11.9531C914.016 9.92188 910.656 8.90625 906.25 8.90625H895.469Z" stroke="white"/>
+          </svg> 
+     </div>  
+    
+  <!-- Header 
+      begins 
+      
+      -->
+        
+    <header id="#header">
+    
+    
+    
+    <i class="fa fa-bars" onclick="openMenu()" id="bar" alt=""></i>
+    
+    
+    
+    <nav onclick="closeMenu()">
+            <ul>
+     
+            <li> <img class="logo" src="meLogo.svg" alt="Logo"> </li>
+            <a href="#"><li>Home</li></a>
+            
+            <a href="#about"><li>About</li></a>
+            <a href="#contact" onclick="openContact()"><li>Contact</li></a>
+            <a href="#skills"><li>Skills</li></a>
+            
+       <a href="#projects"><li>Projects</li></a>
+                  
+       </ul>
+    </nav>
+    
+    
+    <!-- HeaderText
+      begins 
+      
+      -->
+        
+    
+
+    <div class="headertext" data-aos="zoom-out">
+
+            <h1>Software Engineer</h1>
+        
+           
+    
+      <a href="#about"><button type="submit" name="about">Know More</button></a>
+ 
+      <a href="Vincent's Resume (2).pdf"><button type="submit" name="about" download="" >Resume</button></a>
+        <a href="#projects"><button type="submit" name="about">My Projects</button></a>
+        
+        <br><br>
+         
+        <a href="https://www.instagram.com/theycallme_vince"><i class="social-icon fab fa-instagram"></i></a>
+        
+        <a href="https://www.github.com/vince095"><i class="social-icon fab fa-github"></i></a>
+        
+    
+        <a href="mailto: vincent_thejane@outlook.com"><i class="fa fa-envelope"></i></a>
+        <a href="https://www.linkedin.com/mwlite/in/vincent-thejane-a286b0183"><i class="social-icon fab fa-linkedin"></i></a>
+        
+        </div>
+   
+          
+    </header>
+    
+      <!-- About 
+      begins 
+      
+      -->
+    
+    
+    
+    
+    <div class="about" id="about" data-aos="fade-up">
+    <br><br><br><br>
+
+    <div class="bubble" data-aos="fade-up"></div>
+    
+         <!--i class="fa fa-user" style="font-size:100px;padding:10px;background:white"></i-->
+         <div class="avatar" style="font-size:100px;padding:10px" data-aos="fade-in">
+          <img src="me.png" alt="vincent">
+        </div>
+        
+   <h1 style="color:black">Vincent Thejane</h1>
+       <p data-aos="fade-up">
+        <b>Hello there, my name is Vincent Thejane. I am an energetic, self-motivated software engineer.
+majored in software engineering at SHENYANG INSTITUDE OF ENGINEERING, CHINA.
+My full skill set spans from website development,to android development,  to database architecture, to API development, to server side coding, 
+to UI design, to project management among many other things.
+</b>
+<br><br>
+<span data-aos="fade-up">I am willing to work or form  collaborations with interested developers at any time.</span></p> 
+          
+        <a href="https://www.instagram.com/theycallme_vince"><i class="social-icon fab fa-instagram"></i></a>
+       
+        <a href="https://www.github.com/vince095"><i class="social-icon fab fa-github"></i></a>
+        
+    
+        <a href="mailto: vincent_thejane@outlook.com"><i class="fa fa-envelope"></i></a>
+        
+        <br><br>
+            
+    </div>
+    
+      <!-- Section
+      begins 
+      
+      -->
+        
+    
+    
+    
+    <div class="uiux" data-aos="fade-in-left">
+        <br><br><br><br>
+        <h1>Get UI/UX Designs Just For You At Your Finger Tips</h1>
+        <br>
+        <button onclick="openContact()">Lets Meet to talk</button>
+        <br><br><br><br><br><br>
+    </div>
+    
+    
+      <!-- Skills
+      begins 
+      
+      -->
+        
+    
+    
+    
+    <div class="skills" id="skills">
+    
+    <br><br>
+        <h1>My Skills</h1><br>
+
+        <span data-aos="fade-up">I am familiar with a lot of programming languages but I am more comfortable working with those mentioned below.</span>
+        
+        
+    <br><br>
+        
+        <div class="skill" data-aos="fade-left">
+        <br><br>
+       <i class="fa fa-code" aria-hidden="true"></i>
+        <br>
+        <h2>Full-stack web developement</h2>
+        
+            <p>When it comes to web development I am comfortable working both frontend and backend even though I may be fascinated by the backend of applications more</p>
+            <br>
+            <br>
+            
+        </div>
+        
+        
+        <div class="skill" data-aos="fade-up">
+        <br><br>
+   <i class="fa fa-code" aria-hidden="true"></i>
+        <br>
+        <h2>C++</h2>
+        
+
+           <p>I have a high skill set of this powerful and versatile language which I very much like working with</p>
+            <br>
+            <br>
+            
+        </div>
+        
+        
+        <div class="skill" data-aos="fade-right">
+        <br><br>
+        <i class="fa fa-code" aria-hidden="true"></i>
+        <br>
+        
+        <h2>JAVA</h2>
+            <p>I love working with Java competent in J2EE building rich web applications with Spring, developing android applications  or designing JavaFx beautiful desktop GUIs it is really my go to tool for great software.</p>
+            <br>
+            <br>
+            
+        </div>
+
+         <div class="skill" data-aos="fade-right">
+        <br><br>
+        <i class="fa fa-code" aria-hidden="true"></i>
+        <br>
+          <h2>Python</h2>
+        
+
+           <p>The Django framework for rapid development, also versed in machine learning</p>
+            <br>
+            <br>
+            
+        </div>
+
+        <div class="skill" data-aos="fade-up">
+          <br><br>
+         <i class="fa fa-code" aria-hidden="true"></i>
+          <br>
+          <h2>KOTLIN</h2>
+  
+             <p>For android development Kotlin is a beautifull language to work with.
+              <br>
+              <br>
+              
+          </div>
+         <br><br><br>
+        </div>
+    
+     <br><br><br>
+    <!-- Projects
+      begins 
+      
+      -->
+    
+    
+    
+    
+    <div class="projects" id="projects">
+    
+    <br><br>
+        
+        <h1>My Projects</h1>
+        
+    
+
+<p style="color:gray;font-weight:lighter;font-size:15px;line-height:40px">Here are a few recent projects. <br>Want to see More ?
+<br><a href="mailto: vincent_thejane@outlook.com" style="color:gray"><b>Email Me</b></a></p>
+
+<br>
+<div class="cap" data-aos="fade-right"> 
+	<a href="https://vince095.github.io/vMusic"> 
+		<img src="vMusic.jpg">   
+	</a>                        
+	<br>        
+</div>
+	    
+  <div class="cap" data-aos="fade-up">
+  	<a href="https://shop-mo.herokuapp.com/">
+  	<img src="shopMO.png">
+ 	 </a>
+   <br>
+
+  </div>
+  <div class="cap" data-aos="fade-right"> 
+        <a href="https://github.com/Vince095/Shop-Mo-Desktop">              
+           <img src="desktop.png" alt="desktop application">                               
+        </a>
+     <br>
+  </div>
+  
+
+  
+<div class="cap" data-aos="fade-up">
+  <a href="https://Vince095.github.io/Vinny">
+  <img src="https://images.pexels.com/photos/1111368/pexels-photo-1111368.jpeg?cs=srgb&dl=pexels-miguel-%C3%A1-padri%C3%B1%C3%A1n-1111368.jpg&fm=jpg">
+  </a>
+   <br>
+
+  </div>
+  
+  
+  
+<div class="cap" data-aos="zoom-in">
+  <a href="https://Vince095.github.io/Slicer">
+   <img src="https://images.pexels.com/photos/682933/pexels-photo-682933.jpeg?cs=srgb&dl=pexels-garrett-morrow-682933.jpg&fm=jpg">
+  </a>
+    <br>
+
+  
+  </div>
+
+  <div class="cap" data-aos="fade-right">
+      
+    <a href="https:/V-news">
+<img src="https://images.pexels.com/photos/4057663/pexels-photo-4057663.jpeg?cs=srgb&dl=pexels-markus-winkler-4057663.jpg&fm=jpg">
+
+    </a>
+
+  <br>
+
+
+</div>
+  
+  
+  </div>
+  <br><br>
+   
+   
+    <!-- Collabo
+      begins 
+      
+      -->
+    
+    
+    
+  
+  <div class="collabo" data-aos="fade-up">
+      <br>
+      <p><b style="color:black">Interested in collaborating or investing ?</b><br> I'm always open to discussing product design work or partnership opportunities</p><br>
+      
+      <button onclick="openContact()">Message Me</button>
+
+<br><br><br>
+
+
+    
+      
+  </div>
+  
+  
+   <!-- Footer
+      begins 
+      
+      -->
+      
+     
+      
+      <footer>
+      <br><br>
+      <div class="footertext" data-aos="fade-up">
+      <h2>Software Engineer</h2>
+      
+      
+            
+        <a href="https://www.instagram.com/theycallme_vince"><i class="social-icon fab fa-instagram"></i></a>
+       
+        <a href="https://www.github.com/vince095"><i class="social-icon fab fa-github"></i></a>
+        
+    
+        <a href="mailto: vincent_thejane@outlook.com"><i class="fa fa-envelope"></i></a>
+        
+        
+        
+        
+	<p>Copyright &copy; <span class="date"></span>. Created By <b>Vincent Thejane</b></p>
+          <br>
+          </div>
+          
+           <div class="top">
+    <a href="#"><i class="fa fa-angle-up" style="position:relative;font-size:40px;padding:10px;background:black;color:white;top:25px"></i></a>
+       
+      </div>
+          
+      </footer>
+  
+  
+  
+  
+    
+    <!-- Contact
+      begins 
+      
+      -->
+    
+    
+    <div class="it">
+
+<a href="#contact"><i class="social-icon fab fa-telegram" style="font-size:70px;position:fixed;right:4%; bottom:2%;z-index:1000" onclick="openContact()"></i></a>
+
+   <div class="contact" id="contact">
+   
+    <i class="fa fa-angle-up" style="color:white;font-size:30px;position:absolute;right:10%;top:10%" onclick="closeContact()"></i>
+   
+   
+   <div class="icons">
+   
+   <h1>Contact Me</h1>
+   
+             <a href="https://wechat.com/thejane95ls/"><i class="social-icon fab fa-wechat"></i></a>
+        <a href="https://www.instagram.com/theycallme_vince"><i class="social-icon fab fa-instagram"></i></a>
+       
+        <a href="https://www.github.com/vince095"><i class="social-icon fab fa-github"></i></a>
+        
+    
+        <a href="mailto: vincent_thejane@outlook.com"><i class="fa fa-envelope"></i></a>
+        <br><br>
+      <h2>Email Me</h2>
+      <p><a href="mailto: vincent_thejane@outlook.com ">vincent_thejane@outlook.com</a><br>
+   
+      </p>
+       
+       
+       <h2>Call Me</h2> 
+       <a href="tel:+27691986690 "><p>+27 69 198 6690</a><br>
+         
+       </p>   
+       
+        
+        
+        
+              
+        
+       </div>
+       </div>
+       </div>
+    
+    
+    
+      <!-- Script Tag
+      begins 
+      
+      -->
+        
+
+    
+         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
+        
+    </script>
+    
+    <script> 
+AOS.init({
+    easing: 'ease-out',
+    duration: 500, 
+    
+    
+}); 
+document.querySelector('.date').innerHTML= new Date().getFullYear();
+
+</script>
+
+
+          
+    </body>
+</html>
